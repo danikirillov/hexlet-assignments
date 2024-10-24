@@ -32,7 +32,7 @@ class FileKVTest {
 
     @Test
     void inMemoryKVTest() {
-        KeyValueStorage storage = new InMemoryKV(Map.of("key", "10"));
+        KeyValueStorage storage = new FileKV(filepath.toString(), Map.of("key", "10"));
         assertThat(storage.get("key2", "default")).isEqualTo("default");
         assertThat(storage.get("key", "default")).isEqualTo("10");
 
@@ -56,7 +56,7 @@ class FileKVTest {
         Map<String, String> clonedInitial = new HashMap<>();
         clonedInitial.putAll(initial);
 
-        KeyValueStorage storage = new InMemoryKV(initial);
+        KeyValueStorage storage = new FileKV(filepath.toString(),initial);
 
         initial.put("key2", "value2");
         assertThat(storage.toMap()).isEqualTo(clonedInitial);
