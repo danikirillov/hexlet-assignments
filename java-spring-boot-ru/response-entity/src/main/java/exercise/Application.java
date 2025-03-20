@@ -36,7 +36,7 @@ public class Application {
                             @RequestParam(defaultValue = "10") Integer limit) {
         var skip = (page - 1) * limit;
         var postsC = posts.stream().skip(skip).limit(limit).toList();
-        return ResponseEntity.ok().header("X-Total-Count", String.valueOf(postsC.size())).body(postsC);
+        return ResponseEntity.ok().header("X-Total-Count", String.valueOf(posts.size())).body(postsC);
     }
 
     @PostMapping("/posts") // Создание страницы
