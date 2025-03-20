@@ -10,7 +10,11 @@ public class Application {
 
         for (Method method : Address.class.getDeclaredMethods()) {
             if (method.isAnnotationPresent(Inspect.class)) {
-                System.out.printf("Method '%s' returns a value of the type '%s'", method.getName(), method.getReturnType());
+                System.out.printf(
+                    "Method %s returns a value of type %s",
+                    method.getName(),
+                    method.getReturnType().getName()
+                );
             }
         }
     }
