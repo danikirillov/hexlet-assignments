@@ -13,7 +13,7 @@ public class Application {
                 System.out.printf(
                     "Method %s returns a value of type %s%n",
                     method.getName(),
-                    method.getReturnType().getName()
+                    method.getReturnType().getSimpleName()
                 );
             }
         }
