@@ -21,13 +21,12 @@ public class Application {
     // Все пользователи
     private List<User> users = Data.getUsers();
     @Autowired
-    private List<String> admins;
+    private UserProperties admins;
 
     // BEGIN
     @GetMapping("/admins")
     public List<String> getUsers() {
-        admins.sort(String::compareTo);
-        return admins;
+        return admins.getAdmins().stream().sorted().toList();
     }
     // END
 
