@@ -2,7 +2,7 @@
 spring:
   # BEGIN
   jpa:
-    show-sql: true // Заодно включает показ sql-запросов
+    show-sql: true
     hibernate:
       ddl-auto: update
   # END
