@@ -44,13 +44,13 @@ public class PeopleController {
         return personRepository.findAll();
     }
 
-    @PostMapping("/posts")
+    @PostMapping("/people")
     @ResponseStatus(CREATED)
     public Person create(@RequestBody Person person) {
         return personRepository.save(person);
     }
 
-    @DeleteMapping("/posts/{id}")
+    @DeleteMapping("/people/{id}")
     @ResponseStatus(NO_CONTENT)
     public void destroy(@PathVariable String id) {
         personRepository.deleteById(Long.valueOf(id));
