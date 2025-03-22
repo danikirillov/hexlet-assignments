@@ -32,7 +32,7 @@ public class ProductsController {
     }
 
     // BEGIN
-    @GetMapping
+    @PostMapping
     public Product create(@RequestBody Product product) {
         var is =  productRepository.findAll().stream().anyMatch(p -> product.equals(p));
         if (is) {
