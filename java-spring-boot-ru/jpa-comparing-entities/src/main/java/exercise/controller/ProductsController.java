@@ -37,7 +37,7 @@ public class ProductsController {
     public Product create(@RequestBody Product product) {
         var is =  productRepository.findAll().stream().anyMatch(p -> product.equals(p));
         if (is) {
-            throw new ResourceNotFoundException("Product already exists");
+            throw new ResourceAlreadyExistsException("Product already exists");
         }
 
         return productRepository.save(product);
